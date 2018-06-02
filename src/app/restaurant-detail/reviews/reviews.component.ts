@@ -10,12 +10,21 @@ import { RestaurantsService } from "../../restaurants/restaurants.service";
 })
 export class ReviewsComponent implements OnInit {
 
-  reviews: Observable<any>
+  public reviews: any[]
 
-  constructor(private restaurantService : RestaurantsService, private route : ActivatedRoute) { }
+  constructor(
+    private restaurantService: RestaurantsService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-    this.reviews = this.restaurantService.reviewsOfRestaurant(this.route.parent.snapshot.params['id'])
+    let id = this.route.parent.snapshot.params['id']
+
+    this.restaurantService.reviewsOfRestaurant(id)
+      .subscribe(reviews => {
+        console.log(reviews)
+        this.reviews = reviews
+      })
   }
 
 }

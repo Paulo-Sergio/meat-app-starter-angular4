@@ -5,10 +5,9 @@ import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch';
 
-import { Restaurant } from './restaurant/restaurant.model'
-
 import { MEAT_API } from '../app.api'
 import { ErrorHandler } from "../app.error-handler";
+import { Restaurant } from '../models/restaurant.model';
 
 @Injectable()
 export class RestaurantsService {
