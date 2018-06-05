@@ -6,6 +6,7 @@ import { CartItem } from "../models/cart-item.model";
 @Injectable()
 export class OrderService {
 
+
     constructor(
         private cartService: ShoppingCartService
     ) { }
@@ -24,5 +25,9 @@ export class OrderService {
 
     remove(item: CartItem) {
         this.cartService.removerItem(item)
-      }
+    }
+
+    itemsValue(): number {
+        return this.cartService.total()
+    }
 }
