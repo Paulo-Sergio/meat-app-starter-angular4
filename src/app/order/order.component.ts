@@ -42,4 +42,8 @@ export class OrderComponent implements OnInit {
     return this.orderService.itemsValue()
   }
 
+  checkOrder(order: any) {
+    
+  }
+
 }
